@@ -23,11 +23,11 @@ map.feature(unique(bibliography$language), control = F)
 #### search
 ```{r}
 library(DT)
-datatable(wwsb, filter = 'top', rownames = FALSE, options = list(dom = 'tip'), escape = FALSE)
+datatable(wwsb, filter = 'top', rownames = FALSE, options = list(pageLength = 20, dom = 'tip'), escape = FALSE)
 ```
 
 #### bibliography
 ```{r}
 library(DT)
-datatable(bibliography, filter = 'top', rownames = FALSE, options = list(autoWidth = FALSE), escape = FALSE)
+datatable(bibliography, filter = 'top', rownames = FALSE, options = list(pageLength = 20, autoWidth = FALSE), escape = FALSE)
 ```
