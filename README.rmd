@@ -9,6 +9,8 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE)
 ###  The World Consonant Alternation Database {.tabset .tabset-fade .tabset-pills}
 Some characters may be displayed incorrectly.
 
+Download database: [.tsv](https://raw.githubusercontent.com/agricolamz/wcad/master/database.csv)
+
 #### about database
 Here is a map of the languages from WCAD:
 ```{r}
