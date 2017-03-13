@@ -25,11 +25,12 @@ map.feature(unique(bibliography$language), control = F)
 #### search
 ```{r}
 library(DT)
+wwsb$language <- makelink(wwsb$language)
 datatable(wwsb, filter = 'top', rownames = FALSE, options = list(pageLength = 20, dom = 'tip'), escape = FALSE)
 ```
 
 #### bibliography
 ```{r}
-library(DT)
+bibliography$language <- makelink(bibliography$language)
 datatable(bibliography, filter = 'top', rownames = FALSE, options = list(pageLength = 20, autoWidth = FALSE), escape = FALSE)
 ```
