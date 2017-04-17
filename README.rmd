@@ -12,7 +12,7 @@ Some characters may be displayed incorrectly.
 Download database: [.tsv](https://raw.githubusercontent.com/agricolamz/wcad/master/database.csv)
 
 #### about database
-Here is a map of the languages from WCAD: 
+Here is a map of the languages from WCAD:
 ```{r}
 setwd("/home/agricolamz/_DATA/OneDrive1/_Work/github/wcad")
 bibliography <- read.csv("bibliography.csv", sep = "\t", na.strings = "")
