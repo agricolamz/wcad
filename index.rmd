@@ -21,7 +21,8 @@ names(wwsb)[2:3] <- c("X→", "→Y")
 library(lingtypology)
 map.feature(unique(bibliography$language),
             label = unique(bibliography$language),
-            label.hide = TRUE)
+            label.hide = TRUE,
+            color = "blue")
 ```
 
 #### search
