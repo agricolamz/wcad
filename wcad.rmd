@@ -12,6 +12,7 @@ knit: (function(inputFile, encoding) {
 
 ```{r setup, include=FALSE, warning=F}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE)
+library(lingtypology)
 ```
 
 ###  The World Consonant Alternation Database {.tabset .tabset-fade .tabset-pills}
@@ -22,9 +23,8 @@ Download database: [.tsv](https://raw.githubusercontent.com/agricolamz/wcad/mast
 #### about database
 Here is a map of the languages from WCAD:
 ```{r}
-bibliography <- read.csv("bibliography.csv", sep = "\t", na.strings = "")
-wwsb <- read.csv("database.csv", sep = "\t", na.strings = "")
-names(wwsb)[2:3] <- c("X→", "→Y")
+bibliography <- read_tsv("bibliography.csv")
+wwsb <- read_tsv("database.csv")
 library(lingtypology)
 map.feature(unique(bibliography$language),
             label = unique(bibliography$language),
