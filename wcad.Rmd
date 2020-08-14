@@ -11,8 +11,9 @@ knit: (function(inputFile, encoding) {
 ---
 
 ```{r setup, include=FALSE, warning=F}
-knitr::opts_chunk$set(echo=FALSE, message=FALSE)
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning = FALSE)
 library(lingtypology)
+library(tidyverse)
 ```
 
 ###  The World Consonant Alternation Database {.tabset .tabset-fade .tabset-pills}
