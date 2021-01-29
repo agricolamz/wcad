@@ -26,18 +26,28 @@ Here is a map of the languages from WCAD:
 ```{r}
 bibliography <- read_tsv("bibliography.csv")
 wwsb <- read_tsv("database.csv")
+
 library(lingtypology)
+wwsb %>% 
+  distinct(glottocode, language) %>% 
+  left_join(bibliography) %>% 
+  mutate(language = lang.gltc(glottocode)) %>% 
+  select(-glottocode) ->
+  bibliography
+
 map.feature(unique(bibliography$language),
-            label = unique(bibliography$language),
-            label.hide = TRUE,
             color = "blue")
 ```
 
 #### search
 ```{r}
 library(DT)
-wwsb$language <- url.lang(wwsb$language)
-datatable(wwsb, filter = 'top', rownames = FALSE, options = list(pageLength = 20, dom = 'tip'), escape = FALSE)
+wwsb %>% 
+  distinct(glottocode, language) %>% 
+  left_join(bibliography) %>% 
+  mutate(language = url.lang(language)) %>% 
+  select(-glottocode) %>% 
+  datatable(filter = 'top', rownames = FALSE, options = list(pageLength = 20, dom = 'tip'), escape = FALSE)
 ```
 
 #### bibliography
